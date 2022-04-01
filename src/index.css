@@ -1,13 +1,23 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.screen {
+  @apply text-white text-xl text-right font-bold h-16 mb-2 bg-gray-700 rounded-lg px-2 w-full focus:outline-none;
+}
+
+.calc-blue-button {
+  @apply bg-blue-500 text-white font-bold flex justify-center items-center w-16 h-16 rounded-lg hover:bg-blue-600 transition duration-300;
+}
+
+.calc-red-button {
+  @apply bg-red-500 text-white font-bold col-span-2 flex justify-center items-center h-16 rounded-lg hover:bg-red-600 transition duration-300;
 }
